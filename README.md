@@ -12,6 +12,21 @@ The workflow treats manuscript improvement as a closed loop:
 
 The pause condition is central: the skill should stop and ask the researcher when progress requires new data, experiments, simulations, images, datasets, theory, modeling, confidential decisions, or author judgment.
 
+## Workflow
+
+```mermaid
+flowchart TD
+    A["Manuscript + target journal"] --> B["Reviewer Agent<br/>Critique + recommendation"]
+    B --> C["Author Agent<br/>Revise manuscript + response log"]
+    C --> D["Verifier Agent<br/>Check claims, citations, figures, and build"]
+    D --> E["Reviewer Agent<br/>Re-review revised manuscript"]
+    E --> F{"Acceptable?"}
+    F -- "Yes" --> G["Stop<br/>Ready or near-ready"]
+    F -- "No, revision possible" --> C
+    F -- "No, missing information" --> H["Pause<br/>Ask human for data, decisions, or theory"]
+    H --> C
+```
+
 ## Install
 
 Install directly from GitHub:
