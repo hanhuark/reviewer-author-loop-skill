@@ -1,0 +1,41 @@
+{
+  "name": "reviewer-author-loop",
+  "version": "0.1.0",
+  "description": "Iterative reviewer-author manuscript revision workflow with verification and human-pause conditions.",
+  "author": {
+    "name": "Han Hu",
+    "email": "72934230+hanhuark@users.noreply.github.com",
+    "url": "https://github.com/hanhuark"
+  },
+  "homepage": "https://github.com/hanhuark/reviewer-author-loop-skill",
+  "repository": "https://github.com/hanhuark/reviewer-author-loop-skill",
+  "license": "MIT",
+  "keywords": [
+    "peer-review",
+    "manuscript-revision",
+    "rebuttal",
+    "academic-writing",
+    "research-workflow",
+    "codex-skill"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Reviewer-Author Loop",
+    "shortDescription": "Iteratively review, revise, verify, and re-review manuscripts.",
+    "longDescription": "A manuscript improvement workflow where a reviewer agent critiques, an author agent revises, a verifier checks the revision, and the loop repeats until acceptance or a human-pause condition is reached. Useful for virtual peer review, rebuttal preparation, resubmission polishing, and deciding when more data, experiments, theory, or author judgment is required.",
+    "developerName": "Han Hu",
+    "category": "Productivity",
+    "capabilities": [
+      "Research",
+      "Write",
+      "Review"
+    ],
+    "websiteURL": "https://github.com/hanhuark/reviewer-author-loop-skill",
+    "defaultPrompt": [
+      "Run a reviewer-author loop on this manuscript until it is acceptable or human input is needed.",
+      "Review this paper, revise it as the author, verify the revision, and repeat.",
+      "Prepare a response-to-reviewers plan and identify any pause conditions."
+    ],
+    "brandColor": "#4F46E5"
+  }
+}

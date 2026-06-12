@@ -1,0 +1,13 @@
+{
+  "name": "reviewer-author-loop",
+  "description": "Iterative reviewer-author manuscript revision workflow with verification and human-pause conditions.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Han Hu",
+    "email": "72934230+hanhuark@users.noreply.github.com",
+    "url": "https://github.com/hanhuark"
+  },
+  "homepage": "https://github.com/hanhuark/reviewer-author-loop-skill",
+  "repository": "https://github.com/hanhuark/reviewer-author-loop-skill",
+  "license": "MIT"
+}
