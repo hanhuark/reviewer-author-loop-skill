@@ -16,6 +16,12 @@ Workflow:
 6. Re-review the revised manuscript against the previous acceptance criteria.
 7. Continue until acceptable, or pause when new evidence, data, experiments, theory, permissions, or author judgment is required.
 
+Execution rule:
+
+- Do not stop after the first reviewer report unless the user explicitly asks for review only.
+- If the manuscript is editable and no pause condition is triggered, complete at least one full cycle: review -> revise -> verify -> re-review.
+- If direct editing is not possible, produce a revised-text artifact or patch plan before re-reviewing.
+
 Expected output:
 
 - reviewer recommendation
@@ -24,4 +30,3 @@ Expected output:
 - verification results
 - remaining risks
 - final stop/pause decision
-

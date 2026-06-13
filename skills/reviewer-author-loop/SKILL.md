@@ -16,6 +16,25 @@ Use this skill to run a closed-loop manuscript improvement process:
 
 This skill is distinct from one-pass peer review. Its value is the revision loop, traceable comment resolution, and explicit stop/pause decision.
 
+## Execution Contract
+
+Default behavior is a full automated loop, not a one-pass review. After the Reviewer Agent produces comments, immediately continue to the Author Agent unless one of these is true:
+
+- the user explicitly asks for review only, comments only, or no edits
+- the reviewer recommendation is accept or accept after minor editorial revision
+- the next revision requires a human-pause condition
+- the manuscript source is not editable and no separate revision artifact can be produced
+
+Do not end the turn after "Reviewer Round 1" if the user asked for review-revise-review, iterative improvement, or improvement until acceptance. If the user asks to "start with Reviewer Round 1," provide a concise reviewer summary, then continue automatically into author revision, verification, and re-review.
+
+For long manuscripts, run one complete loop per turn when feasible:
+
+```text
+Reviewer Round N -> Author Revision N -> Verifier Check N -> Re-Reviewer Decision N
+```
+
+Only stop at the end of a loop when the stop/pause rules below are satisfied. Otherwise continue to the next loop or explain which practical limit prevents continuing.
+
 ## Confidentiality
 
 If private manuscripts, reviewer reports, review archives, unpublished data, grant proposals, or confidential comments are provided, use them only for the current task. Do not copy private text into reusable skill files, public outputs, examples, or repositories. When extracting lessons from private materials, convert them into abstract process rules with no titles, author names, manuscript identifiers, wording, or identifiable facts.
@@ -62,6 +81,8 @@ Read the current manuscript and produce a decision-oriented review:
 
 Use `references/reviewer-rubric.md` for detailed review dimensions.
 
+Keep reviewer output concise enough to guide revision. The reviewer report is an intermediate artifact unless the user requested review-only output.
+
 ### 2. Author Agent
 
 Convert reviewer comments into revisions:
@@ -73,6 +94,8 @@ Convert reviewer comments into revisions:
 - preserve a response log with comment, action, manuscript location, and residual risk
 
 Use `references/author-revision-protocol.md` for revision strategy and response-log structure.
+
+If source files are editable, make the revisions directly. If direct editing is not possible, produce a revised section, patch plan, or response log as the author artifact.
 
 ### 3. Verifier Agent
 
@@ -118,7 +141,7 @@ Use `references/pause-criteria.md` to classify pause conditions and phrase the u
 
 ## Output Format
 
-During the loop, keep outputs concise and actionable:
+During an automated loop, do not dump full reviewer reports at every stage unless asked. Keep outputs concise and actionable:
 
 - **Reviewer Decision**
 - **Required Revisions**
@@ -126,6 +149,12 @@ During the loop, keep outputs concise and actionable:
 - **Verification**
 - **Remaining Risks**
 - **Next Loop Decision**
+
+For intermediate loops, include a compact response log:
+
+```text
+ID | Reviewer concern | Author action | Location/artifact | Verification status
+```
 
 When the loop stops, provide:
 

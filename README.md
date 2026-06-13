@@ -12,6 +12,8 @@ The workflow treats manuscript improvement as a closed loop:
 
 The pause condition is central: the skill should stop and ask the researcher when progress requires new data, experiments, simulations, images, datasets, theory, modeling, confidential decisions, or author judgment.
 
+By default, the skill should not stop after the first review report. Unless the user asks for review-only output, it should complete at least one full cycle: review, revise, verify, and re-review.
+
 ## Workflow
 
 ```mermaid
